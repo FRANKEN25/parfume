@@ -1,116 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Cards</title>
-     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #b461a2, #ffffff);
-            padding: 20px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px;
-            height: 350px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card img {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-        }
-        .card h3 {
-            font-size: 18px;
-            margin: 15px 0 5px;
-            color: #333;
-        }
-        .card p {
-            font-size: 14px;
-            color: #777;
-            margin: 0 15px 15px;
-        }
-        .card .price {
-            font-size: 16px;
-            font-weight: bold;
-            color: #555;
-            margin: 0 15px 15px;
-        }
-        .card button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin: 15px;
-            cursor: pointer;
-            font-size: 14px;
-             transition: background-color 0.3s ease;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
 
-        .card button a {
-            color: #fff;
-            text-decoration: none;
-        } 
+    .header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to right, #ededed, #333);
+      color: white;
+    }
 
-        .card button:hover {
-            background-color: #0056b3;
-        }
-        
-       @media (max-width: 768px) {
-            .container {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns */
-                gap: 20px;
-            }
-            .card {
-                height: auto; /* Make card height flexible on small screens */
-                padding: 20px; /* Maintain large padding for mobile */
-            }
-        }
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-        @media (max-width: 480px) {
-            .container {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns on mobile */
-            }
-            .card {
-                padding: 25px; /* Add more padding for bigger cards */
-            }
-        }
+    /* Grid untuk 3 kolom */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 kolom yang sejajar */
+      gap: 20px;
+      padding: 20px;
+      justify-items: center; /* Memastikan setiap card terpusat */
+    }
 
-    </style>
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 300px; /* Memastikan card tidak lebih lebar dari ukuran ini */
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 1rem;
+    }
+
+    .card .content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .card .content p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+
+    .card .content .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+
+    .card button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .card button a {
+        color: #f4f4f4;
+        text-decoration: none;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Media query untuk responsif di layar kecil */
+    @media (max-width: 768px) {
+      .cards {
+        grid-template-columns: repeat(1, 1fr); /* Menjadi 1 kolom pada layar kecil */
+      }
+    }
+
+    /* Media query untuk layar lebih besar (desktop) */
+    @media (min-width: 1200px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom di desktop */
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Product Image">
-            <h3>Product 1</h3>
-            <p>Short description of the product.</p>
-            <p class="price">$10.00</p>
-            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
-        </div>
 
+  <header class="header">
+    <h1>Our Products</h1>
+    <p>Explore our range of amazing products!</p>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Card Image">
+      <div class="content">
+        <h3>Black Opium</h3>
+        <p>This is a short description of Product 1.</p>
+        <p class="price">RP.35.000</p>
+        <button><a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+      </div>
     </div>
+
+ 
+
+ 
+  </section>
+
 </body>
 </html>
