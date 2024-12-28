@@ -136,6 +136,8 @@
         top: 100%;
         left: 0;
         width: 100%;
+        text-align: center;
+        padding: 1rem;
       }
 
       .navbar ul.active {
@@ -327,26 +329,27 @@
   </footer>
 
   <script>
-    function toggleMenu() {
+
+       function toggleMenu() {
       const menu = document.querySelector('.navbar ul');
+      console.log('Toggling menu visibility');
       menu.classList.toggle('active');
     }
 
-    // Mendapatkan elemen popup dan tombol close
-const popup = document.getElementById('promoPopup');
-const closeBtn = document.getElementById('closeBtn');
+    // JavaScript for handling the popup
+    const popup = document.getElementById('promoPopup');
+    const closeBtn = document.getElementById('closeBtn');
+    const urlParams = new URLSearchParams(window.location.search);
+    const showPopup = urlParams.has('showPopup') && urlParams.get('showPopup') === 'true';
 
-// Menampilkan popup setelah 2 detik
-window.onload = function() {
-    setTimeout(() => {
-        popup.style.display = 'flex';
-    }, 2000); // Popup muncul setelah 2 detik
-};
+    if (showPopup) {
+      popup.style.display = 'flex';
+    }
 
-// Menutup popup ketika tombol close diklik
-closeBtn.onclick = function() {
-    popup.style.display = 'none';
-};
+    closeBtn.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+   
 
 // Menutup popup jika area luar popup diklik
 window.onclick = function(event) {
