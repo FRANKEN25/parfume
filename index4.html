@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #ffffff);
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card h3 {
+            font-size: 18px;
+            margin: 15px 0 5px;
+            color: #333;
+        }
+        .card p {
+            font-size: 14px;
+            color: #777;
+            margin: 0 15px 15px;
+        }
+        .card .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            margin: 0 15px 15px;
+        }
+        .card button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 15px;
+            cursor: pointer;
+            font-size: 14px;
+             transition: background-color 0.3s ease;
+        }
+
+        .card button a {
+            color: #fff;
+            text-decoration: none;
+        } 
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+     <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+         <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+         <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+         <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+         <div class="card">
+            <img src="https://files.oaiusercontent.com/file-Lb9A9Qvy8pP3TorcLi65pt?se=2024-12-28T14%3A26%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2bb71acc-698f-428d-8601-64b64c9b594b.webp&sig=Yq6d6xVXrqs/MfCd2TRhBbGyP7HZF5eFFYn33gVmJlY%3D" alt="Product Image">
+            <h3>Product 1</h3>
+            <p>Short description of the product.</p>
+            <p class="price">$10.00</p>
+            <button>  <a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+        </div>
+
+    </div>
+</body>
+</html>
