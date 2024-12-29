@@ -13,20 +13,34 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #ff4b9c;
       padding: 20px;
     }
 
     .header {
       text-align: center;
       padding: 2rem;
-      background: linear-gradient(to right, #ededed, #333);
+      background: linear-gradient(to right, #ededed, #f93ad3);
       color: white;
     }
 
     .header h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+    }
+
+       .search-bar {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
 
     /* Grid untuk 3 kolom */
@@ -39,13 +53,21 @@
     }
 
     .card {
-      background: white;
+      background: rgb(226, 134, 181);
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       width: 100%;
-      max-width: 300px; /* Memastikan card tidak lebih lebar dari ukuran ini */
+      max-width: 300px;
+      opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+   .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .card:hover {
@@ -125,6 +147,10 @@
     <p>Explore our range of amazing products!</p>
   </header>
 
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search for a product...">
+  </div>
+
   <section class="cards">
     <div class="card">
       <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Card Image">
@@ -136,10 +162,63 @@
       </div>
     </div>
 
- 
+    <div class="card">
+      <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Card Image">
+      <div class="content">
+        <h3>TAYLOR SWIFT/h3>
+        <p>This is a short description of Product 1.</p>
+        <p class="price">RP.35.000</p>
+        <button><a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+      </div>
+    </div>
 
- 
+     <div class="card">
+      <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Card Image">
+      <div class="content">
+        <h3>BOMBSHELL</h3>
+        <p>This is a short description of Product 1.</p>
+        <p class="price">RP.35.000</p>
+        <button><a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="http://www.katebrien.com/wp-content/uploads/2021/10/2713033760-e1634245033258.jpg" alt="Card Image">
+      <div class="content">
+        <h3>NAGITA SLAVINA</h3>
+        <p>This is a short description of Product 1.</p>
+        <p class="price">RP.35.000</p>
+        <button><a href="https://wa.me/6285757640514" target="_blank" title="Chat dengan saya di WhatsApp">pesan sekarang</a></button>
+      </div>
+    </div>
+    
   </section>
+
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search');
+      const cards = document.querySelectorAll('.card');
+
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        cards.forEach(card => {
+          const productName = card.querySelector('h3').textContent.toLowerCase();
+          if (productName.includes(query)) {
+            card.classList.add('show');
+            card.style.display = 'block';
+          } else {
+            card.classList.remove('show');
+            card.style.display = 'none';
+          }
+        });
+      });
+
+      // Trigger initial animation for visible cards
+      setTimeout(() => {
+        cards.forEach(card => card.classList.add('show'));
+      }, 100);
+    });
+    </script>
 
 </body>
 </html>
